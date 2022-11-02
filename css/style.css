@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    color: #4d5153;
+}
+
+body {
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 435px;
+    height: 100vh;
+    position: relative;
+}
+
+.container div {
+    padding: 20px;
+}
+
+.container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.container header p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.container header span {
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.container header span:hover::before {
+    display: block;
+}
+
+.container header span::before {
+    content: "";
+    display: none;
+    background: rgba(232, 234, 235, .5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.container .calendar {
+    padding: 0 20px;
+}
+
+div.weeks {
+    border-bottom: 1px solid #4d5153;
+    border-top: 1px solid #4d5153;
+}
+
+div.weeks ul,
+div.days ul {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+div.weeks ul li {
+    padding: 5px;
+    font-weight: 600;
+    width: calc(100% / 7);
+}
+
+div.days ul li {
+    margin-top: 8px;
+    width: calc(100% / 7);
+    padding: 5px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+div.days ul li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+    display: none;
+    transition: all .5s ease;
+}
+
+div.days ul li.inactive {
+    color: #b0b2b2;
+}
+
+div.days ul li.selected {
+        color: #000;
+}
+
+div.days ul li.selected::before {
+    display: block;
+    background: #a7d6f7;
+}
+
+div.days ul li:hover::before {
+    display: block;
+    background: rgba(232, 234, 235, .5);
+}
+
+.btn {
+    padding: 5px;
+    border-radius: 0px;
+    border: 1px solid transparent;
+    display: block;
+    width: 100%;
+    background: rgb(15, 107, 67);
+    color: #fff;
+    
+}
+
+.btn:hover {
+    border: 1px solid rgb(15, 107, 67);
+    background: none;
+    color: #4d5153;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    font-size: .6rem;
+}
